@@ -1,14 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps CI/CD Project</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    background: linear-gradient(-45deg,#0f172a,#1e293b,#2563eb,#06b6d4);
+    background-size:400% 400%;
+    animation:gradient 10s ease infinite;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    width:700px;
+    padding:50px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    text-align:center;
+    color:white;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.logo{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:18px;
+    color:#e2e8f0;
+    margin-bottom:30px;
+}
+
+.success{
+    display:inline-block;
+    background:#22c55e;
+    padding:12px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:30px;
+}
+
+.tech-stack{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.tech{
+    background:rgba(255,255,255,0.2);
+    padding:12px 20px;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.tech:hover{
+    transform:translateY(-5px);
+    background:white;
+    color:black;
+}
+
+.footer{
+    margin-top:35px;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.btn{
+    margin-top:25px;
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    padding:12px 30px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+    transform:scale(1.05);
+}
+</style>
+
 </head>
 <body>
-    <h2>Hello world</h2>
-    <h2>Simple website</h2>
-    <h2>simple</h2>
-    <h3>same problemadded</h3>
+
+<div class="card">
+
+    <div class="logo">🚀</div>
+
+    <h1>DevOps CI/CD Pipeline</h1>
+
+    <div class="success">
+        ✅ Deployment Successful
+    </div>
+
+    <p>
+        Application automatically deployed using
+        GitHub Webhook, Jenkins Pipeline, Maven,
+        Apache Tomcat and AWS EC2.
+    </p>
+
+    <div class="tech-stack">
+        <div class="tech">GitHub</div>
+        <div class="tech">Jenkins</div>
+        <div class="tech">Maven</div>
+        <div class="tech">Tomcat</div>
+        <div class="tech">AWS EC2</div>
+    </div>
+
+    <a href="#" class="btn">CI/CD Running Successfully</a>
+
+    <div class="footer">
+        Built by Harshith | DevOps Engineer
+    </div>
+
+</div>
+
 </body>
 </html>
