@@ -6,7 +6,7 @@ pipeline {
         stage('Clone') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/harshith00000/Task.git'
+                    url: 'https://github.com/harshith00000/Task.git'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
                 dir('task') {
                     sh '''
                     mvn package
-                    cp target/task.war /opt/tomcat/webapps/
+                    cp target/task.war /var/lib/tomcat10/webapps/
                     '''
                 }
             }
@@ -40,11 +40,11 @@ pipeline {
 
     post {
         success {
-            echo 'Build, Test and Deploy Successful'
+            echo 'Pipeline executed successfully.'
         }
 
         failure {
-            echo 'Pipeline Failed'
+            echo 'Pipeline failed.'
         }
     }
 }
