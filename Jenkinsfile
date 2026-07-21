@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'jdk'
-        maven 'maven'
-    }
-
     stages {
 
         stage('Clone') {
