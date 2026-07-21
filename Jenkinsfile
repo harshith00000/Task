@@ -6,33 +6,45 @@ pipeline {
         stage('Clone') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/harshith00000/Task.git'
+                url: 'https://github.com/harshith00000/Task.git'
             }
         }
 
         stage('Build') {
             steps {
-                dir('Task/task') {
-                    sh 'mvn clean package'
+                dir('task') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('task') {
+                    sh 'mvn test'
                 }
             }
         }
 
         stage('Deploy') {
             steps {
-                sh '''
-                cp Task/task/target/task.war /opt/tomcat/webapps/
-                '''
+                dir('task') {
+                    sh '''
+                    mvn package
+                    cp target/task.war /opt/tomcat/webapps/
+                    '''
+                }
             }
         }
     }
 
     post {
         success {
-            echo "Application deployed successfully."
+            echo 'Build, Test and Deploy Successful'
         }
+
         failure {
-            echo "Deployment failed."
+            echo 'Pipeline Failed'
         }
     }
 }
