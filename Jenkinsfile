@@ -27,15 +27,15 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                dir('task') {
-                    sh '''
-                    mvn package
-                    cp target/task.war /var/lib/tomcat10/webapps/
-                    '''
-                }
-            }
+    steps {
+        dir('task') {
+            sh '''
+            mvn package
+            sudo cp target/task.war /var/lib/tomcat10/webapps/
+            '''
         }
+    }
+}
     }
 
     post {
